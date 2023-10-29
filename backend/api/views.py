@@ -80,6 +80,7 @@ def freelancer_login(request):
                 token = jwt_encode_handler(payload)
                 client_profile_url = reverse('client-profile')  
                 print(user)
+                
                 return Response({'token': token, 'user_type': 'freelancer', 'client_profile_url': client_profile_url})
         
         return Response({'error': 'Invalid credentials'}, status=status.HTTP_400_BAD_REQUEST)
